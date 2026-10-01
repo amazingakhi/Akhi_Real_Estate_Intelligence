@@ -1,0 +1,9 @@
+Gurugram Real Estate Summary
+============================
+Rows: 14223
+Columns: 12
+Average Price: ₹39953766.43
+Average Rate per sqft: ₹15296.14
+Average Area: 2621.76 sqft
+Average BHK: 3.27
+Locality Count: 245

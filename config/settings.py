@@ -24,8 +24,8 @@ PLATFORM_TAGLINE = os.getenv(
 VERSION = os.getenv("APP_VERSION", "2.1.0")
 
 CONTACT_NUMBER = os.getenv("CONTACT_NUMBER", "6387594514")
-EMAIL = os.getenv("CONTACT_EMAIL", "iamakv01@gmail.com")
-INSTAGRAM = os.getenv("INSTAGRAM_URL", "https://instagram.com/youknow_akhi")
+EMAIL = os.getenv("CONTACT_EMAIL", "areintelligence@gmail.com")
+INSTAGRAM = os.getenv("INSTAGRAM_URL", "https://instagram.com/akhi_real_estate_intelligence")
 WHATSAPP = f"https://wa.me/{os.getenv('WHATSAPP_NUMBER', '916387594514')}"
 WEBSITE = os.getenv("OFFICIAL_WEBSITE", "https://akhiproperties.com")
 
@@ -35,7 +35,7 @@ MAINTENANCE_RATIO_DEFAULT = 0.008
 PROPERTY_TAX_RATIO_DEFAULT = 0.002
 CAPITAL_GAINS_TAX_RATE = 0.125
 
-ADMIN_EMAIL = os.getenv("AKHI_ADMIN_EMAIL", "iamakv01@gmail.com")
+ADMIN_EMAIL = os.getenv("AKHI_ADMIN_EMAIL", "areintelligence@gmail.com")
 ADMIN_PASSWORD = os.getenv("AKHI_ADMIN_PASSWORD", "")
 
 RAZORPAY_KEY = os.getenv("RAZORPAY_KEY_ID", "")

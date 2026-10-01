@@ -124,8 +124,7 @@ except Exception:
 
 st.set_page_config(
     page_title="Akhi Real Estate Intelligence | AREI™",
-    page_icon="🏛️",
-    layout="wide",
+    page_layout="wide",
     initial_sidebar_state="collapsed",
 )
 
@@ -197,7 +196,7 @@ def _inject_seo_and_analytics():
       "logo": "https://akhiproperties.com/logo.png",
       "description": "Institutional-grade property analytics and advisory platform for Gurugram/NCR real estate",
       "telephone": "+916387594514",
-      "email": "iamakv01@gmail.com",
+      "email": "areintelligence@gmail.com",
       "address": {{
         "@type": "PostalAddress",
         "addressLocality": "Gurugram",
@@ -209,7 +208,7 @@ def _inject_seo_and_analytics():
         "name": "Gurugram"
       }},
       "sameAs": [
-        "https://instagram.com/youknow_akhi",
+        "https://instagram.com/akhi_real_estate_intelligence",
         "https://wa.me/916387594514"
       ]
     }}
@@ -243,10 +242,10 @@ _inject_seo_and_analytics()
 
 # Business Constants
 CONTACT_NUMBER = "6387594514"
-INSTAGRAM = "https://instagram.com/youknow_akhi"
+INSTAGRAM = "https://instagram.com/akhi_real_estate_intelligence"
 WEBSITE = "https://yourwebsite.com"
 WHATSAPP = "https://wa.me/916387594514"
-EMAIL = "iamakv01@gmail.com"
+EMAIL = "areintelligence@gmail.com"
 
 # Razorpay € read from config (falls back to empty string if not configured)
 try:
@@ -415,7 +414,9 @@ st.markdown(
     }
     
     p, label, .stCaption {
-        color: #475569 !important;
+        color: #334155 !important;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
     }
     
     .hero-banner {
@@ -953,9 +954,10 @@ st.markdown(
     [data-testid="stSidebar"] label,
     [data-testid="stSidebar"] div,
     [data-testid="stSidebar"] span {
-        overflow: hidden !important;
-        text-overflow: ellipsis !important;
-        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
     }
 
     [data-testid="stSidebar"] .stButton button {
@@ -1085,6 +1087,149 @@ st.markdown(
         display: flex !important;
         align-items: center !important;
         gap: 8px !important;
+    }
+
+    /* MAIN CONTENT TEXT OVERFLOW FIXES */
+    .main .block-container {
+        overflow-x: hidden !important;
+        word-wrap: break-word !important;
+    }
+
+    /* PREMIUM CARD STYLING */
+    .premium-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .premium-card:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
+    }
+
+    /* HERO SECTION ENHANCEMENT */
+    .hero-enhanced {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0ea5e9 100%);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-enhanced::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    /* BUTTON ENHANCEMENTS */
+    .stButton > button[kind="primary"] {
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%) !important;
+        box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    .stButton > button[kind="primary"]:hover {
+        box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4) !important;
+        transform: translateY(-1px) !important;
+    }
+
+    /* METRIC CARDS */
+    [data-testid="stMetricValue"] {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #0f172a !important;
+    }
+
+    [data-testid="stMetricDelta"] {
+        font-size: 0.9rem !important;
+        font-weight: 600 !important;
+    }
+
+    /* IMAGE CONTAINERS */
+    .image-container {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.05);
+    }
+
+    /* GRADIENT BACKGROUNDS */
+    .gradient-blue {
+        background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    }
+
+    .gradient-dark {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .gradient-purple {
+        background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    /* SHADOW EFFECTS */
+    .shadow-sm {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .shadow-md {
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .shadow-lg {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    /* BUTTON TEXT OVERFLOW FIX */
+    .stButton button {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 12px 16px !important;
+    }
+
+    /* DATAFRAME TEXT OVERFLOW FIX */
+    [data-testid="stDataFrame"] {
+        overflow-x: auto !important;
+    }
+
+    /* METRIC TEXT FIX */
+    [data-testid="stMetricValue"] {
+        overflow: visible !important;
+        text-overflow: clip !important;
     }
 
     /* SPECIFIC SIDEBAR BUTTON FIXES */
@@ -1240,7 +1385,7 @@ def money(value: float | int | None) -> str:
 
 
 def show_shortlist():
-    st.subheader("™ Your property shortlist")
+    st.subheader("Your Property Shortlist")
     saved_properties = st.session_state.saved_properties
     if not saved_properties:
         st.info("Your shortlist is empty. Save properties from Browse properties to compare them here.")
@@ -1306,6 +1451,7 @@ def show_page_navigation():
         ("AI Advisor", "ask_akhi", ":material/smart_toy:"),
         ("Pricing", "pricing", ":material/loyalty:"),
         ("Advisory", "inquiry", ":material/support_agent:"),
+        ("Contact", "contact", ":material/contacts:"),
     ]
     if st.session_state.logged_in:
         row2.insert(0, ("Dashboard", "account", ":material/account_circle:"))
@@ -1331,7 +1477,7 @@ def show_page_navigation():
     for col, (label, page, icon) in zip(cols1, row1):
         with col:
             btn_type = "primary" if st.session_state.page == page else "secondary"
-            if st.button(label, key=f"nav1_{page}", icon=icon, type=btn_type, width='stretch'):
+            if st.button(label, key=f"nav1_{page}", type=btn_type, use_container_width=True):
                 st.session_state.page = page
                 st.session_state.pop("selected_property", None)
                 st.session_state.pop("selected_service", None)
@@ -1342,7 +1488,7 @@ def show_page_navigation():
     for col, (label, page, icon) in zip(cols2, row2):
         with col:
             btn_type = "primary" if st.session_state.page == page else "secondary"
-            if st.button(label, key=f"nav2_{page}", icon=icon, type=btn_type, width='stretch'):
+            if st.button(label, key=f"nav2_{page}", type=btn_type, use_container_width=True):
                 st.session_state.page = page
                 if page != "inquiry":
                     st.session_state.pop("selected_property", None)
@@ -1354,7 +1500,7 @@ def show_page_navigation():
 
 
 def roi_calculator():
-    st.subheader(" Investment ROI Calculator")
+    st.subheader("Investment ROI Calculator")
     
     col1, col2, col3 = st.columns(3)
     
@@ -1469,15 +1615,15 @@ def roi_calculator():
         
         with breakdown_col1:
             st.write("**Investment Details:**")
-            st.write(f"€ Property Price: {property_price:.1f} Cr")
-            st.write(f"€ Down Payment ({down_payment_pct}%): {down_payment:.2f} Cr")
-            st.write(f"€ Loan Amount: {loan_amount:.2f} Cr")
+            st.write(f"• Property Price: {property_price:.1f} Cr")
+            st.write(f"• Down Payment ({down_payment_pct}%): {down_payment:.2f} Cr")
+            st.write(f"• Loan Amount: {loan_amount:.2f} Cr")
         
         with breakdown_col2:
             st.write("**Returns Details:**")
-            st.write(f"€ Capital Appreciation: {(future_value - property_price)/10000000:.2f} Cr")
-            st.write(f"€ Rental Income ({holding_years} years): {total_rental_income/10000000:.2f} Cr")
-            st.write(f"€ Maintenance Cost: -{maintenance_costs/10000000:.2f} Cr")
+            st.write(f"• Capital Appreciation: {(future_value - property_price)/10000000:.2f} Cr")
+            st.write(f"• Rental Income ({holding_years} years): {total_rental_income/10000000:.2f} Cr")
+            st.write(f"• Maintenance Cost: -{maintenance_costs/10000000:.2f} Cr")
 
 
 def emi_calculator():
@@ -1562,7 +1708,7 @@ def valuation_tool(df):
     estimate = rate * area
     st.metric("Estimated market value", f"{estimate / 10000000:.2f} Cr")
     st.caption(f"Comparable listings: {len(comparable):,}  Median rate: {rate:,.0f}/sqft")
-    st.dataframe(comparable[["Locality", "Property Type", "BHK_Count", "Area", "Price", "Rate per sqft"]].head(8), hide_index=True, width='stretch')
+    st.dataframe(comparable[["Locality", "Property Type", "BHK_Count", "Area", "Price", "Rate per sqft"]].head(8), hide_index=True, use_container_width=True)
 
 
 def price_prediction(df):
@@ -1680,7 +1826,7 @@ def property_comparison(df):
     # Display comparison table
     if properties_to_compare:
         comparison_df = pd.DataFrame(properties_to_compare)
-        st.dataframe(comparison_df, width='stretch')
+        st.dataframe(comparison_df, use_container_width=True)
         priced_properties = comparison_df[comparison_df["rate_per_sqft"] > 0]
         if not priced_properties.empty:
             best_value = priced_properties.loc[priced_properties["rate_per_sqft"].idxmin()]
@@ -1734,8 +1880,7 @@ def show_property_detail(df, property_data):
         data=decision_brief,
         file_name="akhi_decision_brief.txt",
         mime="text/plain",
-        icon=":material/download:",
-        width='stretch',
+        use_container_width=True,
     )
 
     detail_col1, detail_col2 = st.columns(2)
@@ -1759,17 +1904,17 @@ def show_property_detail(df, property_data):
         st.dataframe(
             similar[["Locality", "Property Type", "BHK_Count", "Area", "Price", "Rate per sqft"]].head(6),
             hide_index=True,
-            width='stretch',
+            use_container_width=True,
         )
 
     action_col1, action_col2 = st.columns(2)
     with action_col1:
-        if st.button("Inquire about this property", key="detail_inquire", icon=":material/call:", type="primary", width='stretch'):
+        if st.button("Inquire about this property", key="detail_inquire", type="primary", use_container_width=True):
             st.session_state.selected_property = property_data
             st.session_state.page = "inquiry"
             st.rerun()
     with action_col2:
-        if st.button("Back to properties", key="detail_back", icon=":material/arrow_back:", width='stretch'):
+        if st.button("Back to properties", key="detail_back", use_container_width=True):
             st.session_state.page = "explore"
             st.rerun()
 
@@ -1793,7 +1938,7 @@ def sector_intelligence(df):
         st.markdown("**BHK mix**")
         st.bar_chart(scoped["BHK_Count"].value_counts().sort_index())
     st.markdown("**Sector listings**")
-    st.dataframe(scoped[["Property Type", "BHK_Count", "Area", "Price", "Rate per sqft", "RERA Approval"]].head(12), hide_index=True, width='stretch')
+    st.dataframe(scoped[["Property Type", "BHK_Count", "Area", "Price", "Rate per sqft", "RERA Approval"]].head(12), hide_index=True, use_container_width=True)
 
 
 def market_reports(df):
@@ -1873,7 +2018,7 @@ def market_reports(df):
                 file_name=f"AREI_Due_Diligence_Dossier_{d_loc.replace(' ', '_')}.html",
                 mime="text/html",
                 type="primary",
-                width='stretch',
+                use_container_width=True,
             )
         with btn_col2:
             st.info(" **Print to PDF:** Click the download button, open the downloaded file in your browser, and tap 'Print / Save as PDF'!")
@@ -1916,7 +2061,7 @@ def market_reports(df):
                 }
             ),
             hide_index=True,
-            width='stretch',
+            use_container_width=True,
         )
 
 
@@ -2091,7 +2236,7 @@ def gurugram_map(df):
             }
         ),
         hide_index=True,
-        width='stretch',
+        use_container_width=True,
     )
 
 
@@ -2105,13 +2250,13 @@ def ask_akhi(df):
     st.markdown("###  Quick Prompt Inspiration")
     quick_col1, quick_col2, quick_col3 = st.columns(3)
     with quick_col1:
-        if st.button(" 3 BHK under 2.5 Cr in High-Velocity Corridor", width='stretch'):
+        if st.button(" 3 BHK under 2.5 Cr in High-Velocity Corridor", use_container_width=True):
             st.session_state.quick_prompt = "Suggest 3 BHK under 2.5 Cr in Dwarka Expressway or SPR"
     with quick_col2:
-        if st.button(" High Rental Yield under 1.5 Cr", width='stretch'):
+        if st.button(" High Rental Yield under 1.5 Cr", use_container_width=True):
             st.session_state.quick_prompt = "Find high rental yield property under 1.5 Cr in Sohna Road"
     with quick_col3:
-        if st.button(" Prime Blue-Chip Asset in Golf Course Road", width='stretch'):
+        if st.button(" Prime Blue-Chip Asset in Golf Course Road", use_container_width=True):
             st.session_state.quick_prompt = "Recommend prime luxury 4 BHK in Golf Course Road"
 
     default_val = st.session_state.get("quick_prompt", "")
@@ -2123,7 +2268,7 @@ def ask_akhi(df):
         key="ask_akhi_question",
     )
 
-    if not st.button(" Analyze Criteria & Recommend Deals", key="ask_akhi_submit", icon=":material/auto_awesome:", type="primary"):
+    if not st.button(" Analyze Criteria & Recommend Deals", key="ask_akhi_submit", type="primary"):
         return
     if not question.strip():
         st.warning("Please describe your requirement or select a quick prompt above.")
@@ -2188,14 +2333,14 @@ def ask_akhi(df):
     st.dataframe(
         formatted_rec[["Locality", "Property Type", "BHK_Count", "Area", "Price ( Cr)", "Rate (/sqft)", "RERA Approval"]],
         hide_index=True,
-        width='stretch',
+        use_container_width=True,
     )
 
     st.markdown("###  Next Step: Private Advisory & Deal Closing")
     ad_col1, ad_col2 = st.columns(2)
     with ad_col1:
-        if st.button(" Request Priority Deal Consultation", type="primary", width='stretch'):
-            st.session_state.selected_service = f"AI Advisory Match ({bhk or 3} BHK € {budget_crore or 2:.1f} Cr)"
+        if st.button(" Request Priority Deal Consultation", type="primary", use_container_width=True):
+            st.session_state.selected_service = f"AI Advisory Match ({bhk or 3} BHK - {budget_crore or 2:.1f} Cr)"
             st.session_state.page = "inquiry"
             st.rerun()
     with ad_col2:
@@ -2203,7 +2348,6 @@ def ask_akhi(df):
         st.link_button(
             " WhatsApp Senior Broker for Off-Market Options",
             url=f"{WHATSAPP}?text={quick_msg}",
-            icon=":material/chat:",
         )
 
 
@@ -2236,8 +2380,8 @@ def user_dashboard():
         if st.session_state.saved_properties:
             shortlist = pd.DataFrame(st.session_state.saved_properties)
             columns = [column for column in ["Locality", "Property Type", "BHK_Count", "Area", "Price", "Rate per sqft", "Status"] if column in shortlist.columns]
-            st.dataframe(shortlist[columns], hide_index=True, width='stretch')
-            if st.button("Open shortlist", key="dashboard_shortlist", icon=":material/favorite:"):
+            st.dataframe(shortlist[columns], hide_index=True, use_container_width=True)
+            if st.button("Open shortlist", key="dashboard_shortlist"):
                 st.session_state.page = "shortlist"
                 st.rerun()
         else:
@@ -2246,7 +2390,7 @@ def user_dashboard():
         if leads:
             enquiry_df = pd.DataFrame(leads)
             columns = [column for column in ["service", "property", "interest", "budget", "timestamp"] if column in enquiry_df.columns]
-            st.dataframe(enquiry_df[columns], hide_index=True, width='stretch')
+            st.dataframe(enquiry_df[columns], hide_index=True, use_container_width=True)
         else:
             st.info("No enquiries submitted yet.")
 
@@ -2320,7 +2464,7 @@ def property_intelligence(df):
                     }
                 ),
                 hide_index=True,
-                width='stretch',
+                use_container_width=True,
             )
             st.info(" **Methodology:** G-REPI evaluates micro-markets using logarithmic rate position (40%), inventory depth velocity (35%), and standard deviation price stability (25%).")
 
@@ -2334,7 +2478,7 @@ def property_intelligence(df):
         corridors_df = classify_corridor_quadrants(df)
 
         for _, row in corridors_df.iterrows():
-            with st.expander(f"{row['Corridor']} € {row['quadrant']}", expanded=True):
+            with st.expander(f"{row['Corridor']} — {row['quadrant']}", expanded=True):
                 c1, c2, c3 = st.columns(3)
                 c1.metric("Median Rate", f"{row['median_rate_sqft']:,}/sqft")
                 c2.metric("Median Ticket Size", f"{row['median_price_cr']:.2f} Cr")
@@ -2366,7 +2510,7 @@ def property_intelligence(df):
                 }
             ),
             hide_index=True,
-            width='stretch',
+            use_container_width=True,
         )
 
     # -------------------------------------------------------------
@@ -2448,7 +2592,7 @@ def property_intelligence(df):
         y4.metric(f"{holding_horizon}-Yr Annualized IRR", f"{irr_results['annualized_irr_pct']:.1f}%", f"Total Gain: {irr_results['total_net_gain_cr']:.2f} Cr")
 
         st.markdown("###  Financial Cash-Flow & Terminal Value Schedule")
-        st.dataframe(irr_results["schedule_df"], hide_index=True, width='stretch')
+        st.dataframe(irr_results["schedule_df"], hide_index=True, use_container_width=True)
 
         st.info(
             f" **Exit Strategy Summary:** An initial capital outlay of {irr_results['initial_investment_cr']:.2f} Cr (including equity downpayment & registration buffer) projected to yield a terminal asset value of {irr_results['terminal_asset_value_cr']:.2f} Cr after {holding_horizon} years."
@@ -2484,7 +2628,7 @@ def property_intelligence(df):
                 }
             ),
             hide_index=True,
-            width='stretch',
+            use_container_width=True,
         )
 
         st.markdown("---")
@@ -2493,8 +2637,7 @@ def property_intelligence(df):
             data=df.to_csv(index=False),
             file_name="akhi_properties_institutional_intelligence.csv",
             mime="text/csv",
-            icon=":material/download:",
-            width='stretch',
+            use_container_width=True,
         )
 
 
@@ -2543,19 +2686,39 @@ def market_overview(df):
         .head(8)
     )
     opportunities.columns = ["Locality", "Listings", "Average price (Cr)", "Average rate"]
-    st.dataframe(opportunities, hide_index=True, width='stretch')
+    st.dataframe(opportunities, hide_index=True, use_container_width=True)
 
 
 def show_landing_page(df):
-    render_institutional_hero(
-        title=" AKHI REAL ESTATE INTELLIGENCE (AREI)",
-        subtitle="Institutional-Grade Gurugram Micro-Market Research, Automated Valuation (AVM) & Investment Underwriting Suite",
-        badges=[
-            " PROPEQUITY CALIBER INTELLIGENCE",
-            " CRE MATRIX STYLE ABSORPTION",
-            " ACCUMIN AVM ENGINE",
-            " 100% PROPRIETARY IP",
-        ],
+    # Premium Hero Section with Background Image
+    st.markdown(
+        """
+        <div class="hero-enhanced animate-fade-in">
+            <div style="position: relative; z-index: 1; text-align: center; color: white;">
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin: 0 0 1rem 0; letter-spacing: -0.02em;">
+                    AKHI REAL ESTATE INTELLIGENCE
+                </h1>
+                <p style="font-size: 1.2rem; margin: 0 0 2rem 0; opacity: 0.9;">
+                    Institutional-Grade Gurugram Micro-Market Research, Automated Valuation (AVM) & Investment Underwriting Suite
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                        PROPEQUITY CALIBER INTELLIGENCE
+                    </span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                        CRE MATRIX STYLE ABSORPTION
+                    </span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                        ACCUMIN AVM ENGINE
+                    </span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                        100% PROPRIETARY IP
+                    </span>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
     grepi_df = calculate_grepi_index(df)
@@ -2573,10 +2736,67 @@ def show_landing_page(df):
 
     st.markdown("---")
 
+    # Premium Image Showcase
+    st.markdown(
+        """
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:1rem;">
+            <span class="material-symbols-rounded" style="color:#0ea5e9;font-size:24px;">photo_library</span>
+            <h3 style="margin:0;font-size:1.4rem;font-weight:700;color:#0f172a;">Premium Property Portfolio</h3>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    img1, img2, img3 = st.columns(3)
+    with img1:
+        st.markdown(
+            """
+            <div class="image-container" style="margin-bottom:1rem;">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" 
+                     alt="Luxury Apartment" style="border-radius:16px;width:100%;height:200px;object-fit:cover;">
+                <div style="padding:1rem;background:white;border-radius:0 0 16px 16px;">
+                    <h4 style="margin:0 0 0.5rem 0;color:#0f172a;font-weight:700;">Luxury Apartments</h4>
+                    <p style="margin:0;font-size:0.85rem;color:#64748b;">Premium 3-4 BHK in prime locations</p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    with img2:
+        st.markdown(
+            """
+            <div class="image-container" style="margin-bottom:1rem;">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" 
+                     alt="Modern Villa" style="border-radius:16px;width:100%;height:200px;object-fit:cover;">
+                <div style="padding:1rem;background:white;border-radius:0 0 16px 16px;">
+                    <h4 style="margin:0 0 0.5rem 0;color:#0f172a;font-weight:700;">Independent Villas</h4>
+                    <p style="margin:0;font-size:0.85rem;color:#64748b;">Spacious homes with premium amenities</p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    with img3:
+        st.markdown(
+            """
+            <div class="image-container" style="margin-bottom:1rem;">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80" 
+                     alt="Commercial Space" style="border-radius:16px;width:100%;height:200px;object-fit:cover;">
+                <div style="padding:1rem;background:white;border-radius:0 0 16px 16px;">
+                    <h4 style="margin:0 0 0.5rem 0;color:#0f172a;font-weight:700;">Commercial Spaces</h4>
+                    <p style="margin:0;font-size:0.85rem;color:#64748b;">Office & retail spaces in business hubs</p>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("---")
+
     # 4 Proprietary Pillars Quick-Access Grid
     st.markdown(
         """
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:0.75rem;">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:1rem;">
             <span class="material-symbols-rounded" style="color:#0ea5e9;font-size:24px;">psychology</span>
             <h3 style="margin:0;font-size:1.4rem;font-weight:700;color:#0f172a;">Proprietary Institutional Research Engines</h3>
         </div>
@@ -2588,12 +2808,13 @@ def show_landing_page(df):
     with p1:
         st.markdown(
             """
-            <div class="tier-card" style="border-top:4px solid #0284C7; height:100%;">
-                <div class="tier-label" style="color:#0284C7;display:flex;align-items:center;gap:5px;">
-                    <span class="material-symbols-rounded" style="font-size:16px;">insights</span> G-REPI Index
+            <div class="premium-card animate-fade-in" style="border-top:4px solid #0284C7; height:100%;">
+                <div style="color:#0284C7;display:flex;align-items:center;gap:8px;margin-bottom:0.8rem;">
+                    <span class="material-symbols-rounded" style="font-size:20px;">insights</span>
+                    <span style="font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">G-REPI Index</span>
                 </div>
-                <h4 style="margin:0.3rem 0; color:#0F172A;">Market Pulse</h4>
-                <p style="font-size:0.82rem; color:#64748B;">Multi-factor composite scoring (0-100) assessing rate velocity, liquidity, and price dispersion.</p>
+                <h4 style="margin:0.3rem 0; color:#0F172A;font-weight:700;font-size:1.1rem;">Market Pulse</h4>
+                <p style="font-size:0.85rem; color:#64748B;line-height:1.5;">Multi-factor composite scoring (0-100) assessing rate velocity, liquidity, and price dispersion.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -2601,12 +2822,13 @@ def show_landing_page(df):
     with p2:
         st.markdown(
             """
-            <div class="tier-card" style="border-top:4px solid #D4AF37; height:100%;">
-                <div class="tier-label" style="color:#B45309;display:flex;align-items:center;gap:5px;">
-                    <span class="material-symbols-rounded" style="font-size:16px;">speed</span> FairValue AVM
+            <div class="premium-card animate-fade-in" style="border-top:4px solid #D4AF37; height:100%;">
+                <div style="color:#B45309;display:flex;align-items:center;gap:8px;margin-bottom:0.8rem;">
+                    <span class="material-symbols-rounded" style="font-size:20px;">speed</span>
+                    <span style="font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">FairValue AVM</span>
                 </div>
-                <h4 style="margin:0.3rem 0; color:#0F172A;">3-Tier Valuation</h4>
-                <p style="font-size:0.82rem; color:#64748B;">P15 Liquidation, P50 Fair Market Value & P85 Premium ceiling with Over/Under Barometer.</p>
+                <h4 style="margin:0.3rem 0; color:#0F172A;font-weight:700;font-size:1.1rem;">3-Tier Valuation</h4>
+                <p style="font-size:0.85rem; color:#64748B;line-height:1.5;">P15 Liquidation, P50 Fair Market Value & P85 Premium ceiling with Over/Under Barometer.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -2614,12 +2836,13 @@ def show_landing_page(df):
     with p3:
         st.markdown(
             """
-            <div class="tier-card" style="border-top:4px solid #10B981; height:100%;">
-                <div class="tier-label" style="color:#065F46;display:flex;align-items:center;gap:5px;">
-                    <span class="material-symbols-rounded" style="font-size:16px;">account_balance</span> CapYield Lab
+            <div class="premium-card animate-fade-in" style="border-top:4px solid #10B981; height:100%;">
+                <div style="color:#065F46;display:flex;align-items:center;gap:8px;margin-bottom:0.8rem;">
+                    <span class="material-symbols-rounded" style="font-size:20px;">account_balance</span>
+                    <span style="font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">CapYield Lab</span>
                 </div>
-                <h4 style="margin:0.3rem 0; color:#0F172A;">IRR & Cap Rates</h4>
-                <p style="font-size:0.82rem; color:#64748B;">Institutional cash flow underwriting, Net Operating Income (NOI), and 5-Year DCF models.</p>
+                <h4 style="margin:0.3rem 0; color:#0F172A;font-weight:700;font-size:1.1rem;">IRR & Cap Rates</h4>
+                <p style="font-size:0.85rem; color:#64748B;line-height:1.5;">Institutional cash flow underwriting, Net Operating Income (NOI), and 5-Year DCF models.</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -2627,12 +2850,13 @@ def show_landing_page(df):
     with p4:
         st.markdown(
             """
-            <div class="tier-card" style="border-top:4px solid #8B5CF6; height:100%;">
-                <div class="tier-label" style="color:#6B21A8;display:flex;align-items:center;gap:5px;">
-                    <span class="material-symbols-rounded" style="font-size:16px;">grid_view</span> Corridor Quadrant
+            <div class="premium-card animate-fade-in" style="border-top:4px solid #8B5CF6; height:100%;">
+                <div style="color:#6B21A8;display:flex;align-items:center;gap:8px;margin-bottom:0.8rem;">
+                    <span class="material-symbols-rounded" style="font-size:20px;">grid_view</span>
+                    <span style="font-weight:700;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">Corridor Quadrant</span>
                 </div>
-                <h4 style="margin:0.3rem 0; color:#0F172A;">Strategic Matrix</h4>
-                <p style="font-size:0.82rem; color:#64748B;">2x2 micro-market classification (Prime Blue-Chip, Velocity Growth, High Yield, Value).</p>
+                <h4 style="margin:0.3rem 0; color:#0F172A;font-weight:700;font-size:1.1rem;">Strategic Matrix</h4>
+                <p style="font-size:0.85rem; color:#64748B;line-height:1.5;">2x2 micro-market classification (Prime Blue-Chip, Velocity Growth, High Yield, Value).</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -2705,7 +2929,7 @@ def show_landing_page(df):
                 "total_market_depth_cr": "Capital Depth ( Cr)",
             }
         )
-        st.dataframe(top_10_grepi, hide_index=True, width='stretch')
+        st.dataframe(top_10_grepi, hide_index=True, use_container_width=True)
 
         if st.button(" Open Full G-REPI Market Pulse Terminal", type="primary"):
             st.session_state.page = "intelligence"
@@ -2728,7 +2952,7 @@ def show_landing_page(df):
                 }
             ),
             hide_index=True,
-            width='stretch',
+            use_container_width=True,
         )
 
     # TAB 4: MONETIZATION & RESEARCH PRODUCTS
@@ -2763,7 +2987,7 @@ def show_landing_page(df):
                 """,
                 unsafe_allow_html=True,
             )
-            if st.button("Order Due-Diligence Report (999)", key="home_order_report", type="primary", width='stretch'):
+            if st.button("Order Due-Diligence Report (999)", key="home_order_report", type="primary", use_container_width=True):
                 st.session_state.page = "inquiry"
                 st.rerun()
 
@@ -2779,7 +3003,7 @@ def show_landing_page(df):
                 """,
                 unsafe_allow_html=True,
             )
-            if st.button("Request Enterprise Access", key="home_order_enterprise", width='stretch'):
+            if st.button("Request Enterprise Access", key="home_order_enterprise", use_container_width=True):
                 st.session_state.page = "inquiry"
                 st.rerun()
 
@@ -2788,21 +3012,21 @@ def show_landing_page(df):
     # Bottom Quick Launch Buttons
     cta1, cta2, cta3 = st.columns(3)
     with cta1:
-        if st.button(" Launch AREI Research Terminal", type="primary", width='stretch'):
+        if st.button(" Launch AREI Research Terminal", type="primary", use_container_width=True):
             st.session_state.page = "intelligence"
             st.rerun()
     with cta2:
-        if st.button(" Explore Gurugram Properties", width='stretch'):
+        if st.button(" Explore Gurugram Properties", use_container_width=True):
             st.session_state.page = "explore"
             st.rerun()
     with cta3:
-        if st.button(" Request Private Institutional Advisory", width='stretch'):
+        if st.button(" Request Private Institutional Advisory", use_container_width=True):
             st.session_state.page = "inquiry"
             st.rerun()
 
 
 def show_property_cards(df: object):
-    st.subheader(" Featured Properties")
+    st.subheader("Featured Properties")
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -2916,12 +3140,13 @@ def show_property_cards(df: object):
         saved = property_id in saved_ids
 
         with col_save:
-            label_save = "✅ Saved" if saved else "💾 Save"
+            label_save = "Saved" if saved else "Save"
             if st.button(
                 label_save,
                 key=f"save_{idx}",
                 help="Remove from shortlist" if saved else "Save to shortlist",
-                width='stretch',
+                use_container_width=True,
+                type="primary" if saved else "secondary",
             ):
                 if not saved:
                     st.session_state.saved_properties.append(property_data)
@@ -2935,20 +3160,20 @@ def show_property_cards(df: object):
                 st.rerun()
 
         with col_inq:
-            if st.button("📞 Call", key=f"inquire_{idx}", help="Inquire about this property", width='stretch'):
+            if st.button("Call", key=f"inquire_{idx}", help="Inquire about this property", use_container_width=True):
                 st.session_state.page = "inquiry"
                 st.session_state.selected_property = property_data
                 st.rerun()
 
         with col_det:
-            if st.button("🔍 View", key=f"details_{idx}", help="View property details", width='stretch'):
+            if st.button("View", key=f"details_{idx}", help="View property details", use_container_width=True):
                 st.session_state.selected_property = property_data
                 st.session_state.page = "property_detail"
                 st.rerun()
 
 
 def show_inquiry_form(property_data=None):
-    st.subheader(" Buyer Consultation Request")
+    st.subheader("Buyer Consultation Request")
 
     selected_service = st.session_state.get("selected_service")
     if selected_service:
@@ -2990,9 +3215,9 @@ def show_inquiry_form(property_data=None):
 
         col1, col2 = st.columns(2)
         with col1:
-            submit = st.form_submit_button(" Submit Inquiry", width='stretch', type="primary")
+            submit = st.form_submit_button(" Submit Inquiry", use_container_width=True, type="primary")
         with col2:
-            cancel = st.form_submit_button(" Cancel", width='stretch')
+            cancel = st.form_submit_button(" Cancel", use_container_width=True)
 
     if cancel:
         st.session_state.page = "home"
@@ -3064,13 +3289,11 @@ def show_inquiry_form(property_data=None):
                     " Chat with Akhi Senior Advisor on WhatsApp",
                     url=admin_wa_url,
                     type="primary",
-                    icon=":material/chat:",
                 )
             with w2:
                 st.link_button(
                     f" Call Directly: +91-{CONTACT_NUMBER}",
                     url=f"tel:{CONTACT_NUMBER}",
-                    icon=":material/call:",
                 )
 
             st.balloons()
@@ -3081,7 +3304,7 @@ def show_inquiry_form(property_data=None):
 
 
 def show_analytics(df):
-    st.subheader(" Premium Analytics Dashboard")
+    st.subheader("Premium Analytics Dashboard")
     
     analytics_tabs = st.tabs([
         "Market overview",
@@ -3332,19 +3555,19 @@ def show_admin_dashboard():
                     
                     col_a, col_b, col_c, col_d = st.columns(4)
                     with col_a:
-                        if st.button(" Hot", key=f"hot_{idx}", width='stretch'):
+                        if st.button(" Hot", key=f"hot_{idx}", use_container_width=True):
                             st.session_state[f"lead_{idx}_status"] = "hot"
                             st.rerun()
                     with col_b:
-                        if st.button(" Warm", key=f"warm_{idx}", width='stretch'):
+                        if st.button(" Warm", key=f"warm_{idx}", use_container_width=True):
                             st.session_state[f"lead_{idx}_status"] = "warm"
                             st.rerun()
                     with col_c:
-                        if st.button(" Cold", key=f"cold_{idx}", width='stretch'):
+                        if st.button(" Cold", key=f"cold_{idx}", use_container_width=True):
                             st.session_state[f"lead_{idx}_status"] = "cold"
                             st.rerun()
                     with col_d:
-                        if st.button(" Convert", key=f"convert_{idx}", width='stretch'):
+                        if st.button(" Convert", key=f"convert_{idx}", use_container_width=True):
                             st.success(f"Lead marked as converted!")
                     
                     st.markdown("---")
@@ -3364,11 +3587,11 @@ def show_admin_dashboard():
                     " Name": user.get("name", "N/A"),
                     " Email": email,
                     " Phone": user.get("phone", "N/A"),
-                    " Status": " Admin" if email == "iamakv01@gmail.com" else " User"
+                    " Status": " Admin" if email == "areintelligence@gmail.com" else " User"
                 })
             
             users_df = pd.DataFrame(users_list)
-            st.dataframe(users_df, width='stretch', hide_index=True)
+            st.dataframe(users_df, use_container_width=True, hide_index=True)
             
             st.markdown("---")
             st.metric("Total Registered Users", len(st.session_state.users))
@@ -3430,7 +3653,7 @@ def show_admin_dashboard():
         }
         
         rev_df = pd.DataFrame(list(channels.items()), columns=["Revenue Stream", "Potential"])
-        st.dataframe(rev_df, width='stretch', hide_index=True)
+        st.dataframe(rev_df, use_container_width=True, hide_index=True)
         
         total_revenue = sum(channels.values())
         st.markdown(f"### **Total Monthly Revenue Potential: {total_revenue:,.0f}**")
@@ -3461,7 +3684,7 @@ def show_admin_dashboard():
                     l_type = st.selectbox("Property Type", ["Apartment", "Villa", "Penthouse", "Studio", "Plot", "Independent Floor"])
                     l_rate = st.number_input("Rate / sq ft ()", min_value=1000, max_value=120000, value=12000)
                 l_description = st.text_area("Description (optional)", height=80)
-                l_submit = st.form_submit_button(" Add Listing", type="primary", width='stretch')
+                l_submit = st.form_submit_button(" Add Listing", type="primary", use_container_width=True)
 
             if l_submit:
                 if not l_locality or l_area <= 0 or l_price <= 0:
@@ -3493,7 +3716,7 @@ def show_admin_dashboard():
                         # Bust the Streamlit data cache so the new listing is visible immediately
                         if hasattr(get_clean_data, "clear"):
                             get_clean_data.clear()
-                        st.success(f" Listing added: {l_locality} € {l_bhk} BHK € {l_price:.1f} Cr")
+                        st.success(f"Listing added: {l_locality} — {l_bhk} BHK — Rs {l_price:.1f} Cr")
                         st.rerun()
                     except Exception as exc:
                         st.error(f"Failed to save listing: {exc}")
@@ -3511,7 +3734,7 @@ def show_admin_dashboard():
             if "Price" in view_df_display.columns:
                 view_df_display["Price ( Cr)"] = (view_df_display["Price"] / 10_000_000).round(2)
                 view_df_display = view_df_display.drop(columns=["Price"])
-            st.dataframe(view_df_display, width='stretch', hide_index=True)
+            st.dataframe(view_df_display, use_container_width=True, hide_index=True)
 
             # CSV Download
             csv_export = view_df_display.to_csv(index=False).encode("utf-8")
@@ -3520,7 +3743,7 @@ def show_admin_dashboard():
                 data=csv_export,
                 file_name="akhi_listings_export.csv",
                 mime="text/csv",
-                width='stretch',
+                use_container_width=True,
             )
 
         else:  # Edit / Delete
@@ -3529,7 +3752,7 @@ def show_admin_dashboard():
             localities = sorted(df_edit["Locality"].dropna().unique().tolist())
             sel_loc = st.selectbox("Select Locality", localities, key="admin_edit_loc")
             loc_subset = df_edit[df_edit["Locality"] == sel_loc]
-            st.dataframe(loc_subset[[c for c in ["Locality", "BHK_Count", "Area", "Price", "Rate per sqft"] if c in loc_subset.columns]], width='stretch', hide_index=True)
+            st.dataframe(loc_subset[[c for c in ["Locality", "BHK_Count", "Area", "Price", "Rate per sqft"] if c in loc_subset.columns]], use_container_width=True, hide_index=True)
             st.caption(f"{len(loc_subset)} listings in {sel_loc}")
 
             with st.form("delete_form"):
@@ -3566,7 +3789,7 @@ def show_admin_dashboard():
 
         with settings_tabs[1]:
             st.markdown("**API Configuration**")
-            st.info(" Set these values in your `.env` file € never hardcode in source code.")
+            st.info("Set these values in your `.env` file — never hardcode in source code.")
             try:
                 from config.settings import razorpay_is_configured as _rconf
                 rzp_status = " Configured" if _rconf() else " Not configured (set RAZORPAY_KEY_ID in .env)"
@@ -3603,7 +3826,7 @@ def show_admin_dashboard():
         with settings_tabs[4]:
             st.markdown("**Security & Admin**")
             st.warning(" Destructive actions below. Use with caution.")
-            if st.button(" Logout from Admin", width='stretch', type="secondary"):
+            if st.button(" Logout from Admin", use_container_width=True, type="secondary"):
                 st.session_state.logged_in = False
                 st.session_state.is_admin = False
                 st.session_state.current_user = ""
@@ -3633,7 +3856,7 @@ def show_auth_sidebar():
                 email = st.text_input("Email", key="login_email", placeholder="your@email.com")
                 password = st.text_input("Password", type="password", key="login_password",
                                          placeholder="Enter password")
-                if st.button("Login", icon=":material/login:", width='stretch', type="primary"):
+                if st.button("Login", use_container_width=True, type="primary"):
                     user = st.session_state.users.get(email)
                     if user and verify_password(password, user.get("password", "")):
                         if not user["password"].startswith("pbkdf2_sha256$"):
@@ -3651,7 +3874,7 @@ def show_auth_sidebar():
 
             with auth_tabs[1]:
                 st.caption("New to AREI? Create an account to unlock property shortlists and valuation tools.")
-                if st.button("Open Registration Form", icon=":material/person_add:", width='stretch', type="primary"):
+                if st.button("Register Free", use_container_width=True, type="primary"):
                     st.session_state.page = "register"
                     st.rerun()
         else:
@@ -3674,13 +3897,13 @@ def show_auth_sidebar():
                     """,
                     unsafe_allow_html=True,
                 )
-                if st.button("Admin Dashboard", icon=":material/admin_panel_settings:", width='stretch'):
+                if st.button("Admin Dashboard", use_container_width=True):
                     st.session_state.page = "admin"
                     st.rerun()
-            if st.button("Home", icon=":material/home:", width='stretch'):
+            if st.button("Home", use_container_width=True):
                 st.session_state.page = "home"
                 st.rerun()
-            if st.button("Logout", icon=":material/logout:", width='stretch'):
+            if st.button("Logout", use_container_width=True):
                 st.session_state.logged_in = False
                 st.session_state.is_admin = False
                 st.session_state.current_user = ""
@@ -3705,7 +3928,7 @@ def show_register_page():
         unsafe_allow_html=True,
     )
 
-    col_info, col_form = st.columns([5, 7], gap="large")
+    col_info, col_form = st.columns([1, 1], gap="large")
 
     with col_info:
         st.markdown(
@@ -3790,8 +4013,8 @@ def show_register_page():
             st.caption("By creating an account you agree to our Terms of Service & Privacy Policy.")
             st.markdown("<div style='height:8px;'></div>", unsafe_allow_html=True)
 
-            submit = st.form_submit_button("Create Account & Access Intelligence", width='stretch', type="primary", icon=":material/how_to_reg:")
-            back = st.form_submit_button("Back to Home", width='stretch', icon=":material/arrow_back:")
+            submit = st.form_submit_button("Create Account & Access Intelligence", use_container_width=True, type="primary")
+            back = st.form_submit_button("Back to Home", use_container_width=True)
 
         if back:
             st.session_state.page = "home"
@@ -3969,13 +4192,13 @@ def show_pricing_page():
             st.markdown("<div style='height:8px;'></div>", unsafe_allow_html=True)
 
             if plan["id"] == "free":
-                if st.button(plan["cta_label"], key="btn_plan_free", icon=plan["cta_icon"], width='stretch', type="secondary"):
+                if st.button(plan["cta_label"], key="btn_plan_free", use_container_width=True, type="secondary"):
                     st.session_state.page = "explore"
                     st.rerun()
             elif plan["id"] == "enterprise":
-                st.link_button(plan["cta_label"], url=WHATSAPP, icon=plan["cta_icon"], width='stretch')
+                st.link_button(plan["cta_label"], url=WHATSAPP, use_container_width=True)
             else:
-                if st.button(plan["cta_label"], key="btn_plan_pro", icon=plan["cta_icon"], type="primary", width='stretch'):
+                if st.button(plan["cta_label"], key="btn_plan_pro", type="primary", use_container_width=True):
                     st.session_state["pending_plan"] = plan
                     st.session_state.page = "checkout"
                     st.rerun()
@@ -3993,21 +4216,14 @@ def show_pricing_page():
         unsafe_allow_html=True,
     )
 
-    fcol1, fcol2 = st.columns(2, gap="medium")
-    with fcol1:
-        with st.expander("Can I cancel or upgrade my subscription anytime?"):
-            st.write("Yes, absolutely. You can cancel, pause, or upgrade your subscription plan at any time directly through your account dashboard with zero lock-in periods.")
-        with fcol2:
-            with st.expander("What payment methods are supported?"):
-                st.write("We accept UPI (Google Pay, PhonePe, Paytm), All Major Credit/Debit Cards (Visa, Mastercard, RuPay, Amex), Net Banking across 50+ Indian banks, and EMI via Razorpay.")
-
-    fcol3, fcol4 = st.columns(2, gap="medium")
-    with fcol3:
-        with st.expander("How accurate is the FairValue AVM™ valuation?"):
-            st.write("Our Automated Valuation Model (AVM) is trained on verified transactions across Gurugram and achieves high statistical precision by analyzing floor, orientation, amenities, and micro-market velocity.")
-    with fcol4:
-        with st.expander("Is my personal and financial data safe?"):
-            st.write("All credentials are encrypted with PBKDF2-SHA256, and data handling complies with the Digital Personal Data Protection (DPDP) Act 2023. We do not store credit card details or share your data.")
+    with st.expander("Can I cancel or upgrade my subscription anytime?"):
+        st.write("Yes, absolutely. Cancel, pause, or upgrade anytime with zero lock-in periods.")
+    with st.expander("What payment methods are supported?"):
+        st.write("UPI (GPay, PhonePe, Paytm), Credit/Debit Cards (Visa, Mastercard, RuPay), Net Banking, and EMI via Razorpay.")
+    with st.expander("How accurate is the FairValue AVM valuation?"):
+        st.write("Our AVM is trained on verified Gurugram transactions and achieves high accuracy by analyzing floor, orientation, amenities, and micro-market velocity.")
+    with st.expander("Is my personal and financial data safe?"):
+        st.write("All credentials use PBKDF2-SHA256 encryption. Data handling complies with DPDP Act 2023. We never store card details or sell your data.")
 
 
 def show_checkout_page():
@@ -4083,7 +4299,7 @@ def show_checkout_page():
             agree = st.checkbox("I agree to the Terms of Service, DPDP Privacy Policy, and Recurring Billing terms")
 
             st.markdown("<div style='height:8px;'></div>", unsafe_allow_html=True)
-            pay_btn = st.form_submit_button(f"Proceed to Secure Payment ({plan['price_display']})", type="primary", icon=":material/lock:", width='stretch')
+            pay_btn = st.form_submit_button(f"Proceed to Secure Payment ({plan['price_display']})", type="primary", use_container_width=True)
 
         if pay_btn:
             phone_ok, clean_ph = validate_phone_number(phone_val)
@@ -4103,8 +4319,7 @@ def show_checkout_page():
                     f"Subscribe via WhatsApp ({plan['price_display']}/mo)",
                     url=f"https://wa.me/91{CONTACT_NUMBER}?text={urllib.parse.quote(wa_msg)}",
                     type="primary",
-                    icon=":material/chat:",
-                    width='stretch',
+                    use_container_width=True,
                 )
             else:
                 with st.spinner("Generating secure payment link..."):
@@ -4121,25 +4336,268 @@ def show_checkout_page():
                         f"Pay {plan['price_display']} via Razorpay Gateway",
                         url=result,
                         type="primary",
-                        icon=":material/credit_card:",
-                        width='stretch',
+                        use_container_width=True,
                     )
                     st.caption("Secured by Razorpay · UPI, Cards, Net Banking, EMI accepted.")
                 else:
                     st.error(f"Payment gateway returned: {result}")
-                    st.link_button("Subscribe via WhatsApp Support", url=WHATSAPP, icon=":material/support_agent:")
+                    st.link_button("Subscribe via WhatsApp Support", url=WHATSAPP)
 
     st.markdown("---")
-    if st.button("Back to Pricing Plans", icon=":material/arrow_back:"):
+    if st.button("Back to Pricing Plans"):
         st.session_state.page = "pricing"
         st.rerun()
+
+
+def show_contact_page():
+    """Professional About Me & Contact page for Akhi Real Estate Intelligence."""
+
+    # Hero
+    st.markdown(
+        """
+        <div class="hero-banner" style="padding:2.8rem 2rem 2.2rem;margin-bottom:2rem;text-align:center;">
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.15);
+                        color:#ffffff;padding:4px 14px;border-radius:999px;font-size:0.75rem;
+                        font-weight:700;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.8rem;">
+                AREI INSTITUTIONAL ADVISORY DESK
+            </div>
+            <h1 style="font-size:2.4rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:0.5rem;">
+                About Akhi Real Estate Intelligence
+            </h1>
+            <p style="max-width:680px;margin:0 auto;color:#e0f2fe;font-size:1.05rem;">
+                India's most advanced institutional-grade property analytics platform,
+                built for serious investors, NRIs, HNIs, and real estate professionals.
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    col_about, col_contact = st.columns([1, 1], gap="large")
+
+    # ── About Section ─────────────────────────────────────────────────────────
+    with col_about:
+        st.markdown("## About Us")
+        st.markdown(
+            """
+            <div style="background:#ffffff;border:1.5px solid #e2e8f0;border-radius:18px;
+                        padding:1.8rem;box-shadow:0 8px 24px rgba(15,23,42,0.06);">
+
+                <p style="color:#334155;font-size:0.96rem;line-height:1.7;margin-bottom:1.2rem;">
+                    <b style="color:#0f172a;">Akhi Real Estate Intelligence (AREI™)</b> is a
+                    Gurugram-based institutional property data and investment advisory platform.
+                    We combine machine-learning driven automated valuations, proprietary
+                    micro-market benchmarking, and expert deal advisory to help investors
+                    make smarter, faster, and more confident real estate decisions.
+                </p>
+
+                <p style="color:#334155;font-size:0.96rem;line-height:1.7;margin-bottom:1.4rem;">
+                    Our flagship products — <b>G-REPI™ Index</b>, <b>FairValue AVM™</b>,
+                    <b>CapYield™ Lab</b>, and <b>Corridor Quadrant™</b> — are proprietary
+                    intelligence tools built on verified transaction data across 226+
+                    Gurugram micro-markets and 13,958+ live property listings.
+                </p>
+
+                <div style="background:#f0f9ff;border-left:4px solid #0ea5e9;border-radius:0 12px 12px 0;
+                            padding:1rem 1.2rem;margin-bottom:1.2rem;">
+                    <b style="color:#0284c7;font-size:0.88rem;text-transform:uppercase;
+                               letter-spacing:0.04em;">Our Mission</b>
+                    <p style="color:#0c4a6e;margin:6px 0 0;font-size:0.94rem;line-height:1.6;">
+                        To democratize institutional-grade property intelligence for every
+                        Indian investor — from first-time homebuyers to seasoned capital allocators.
+                    </p>
+                </div>
+
+                <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.5rem;">
+                    <span style="background:#f1f5f9;color:#334155;padding:4px 12px;border-radius:999px;
+                                 font-size:0.8rem;font-weight:600;">Gurugram Real Estate</span>
+                    <span style="background:#f1f5f9;color:#334155;padding:4px 12px;border-radius:999px;
+                                 font-size:0.8rem;font-weight:600;">ML Valuations</span>
+                    <span style="background:#f1f5f9;color:#334155;padding:4px 12px;border-radius:999px;
+                                 font-size:0.8rem;font-weight:600;">IRR Projections</span>
+                    <span style="background:#f1f5f9;color:#334155;padding:4px 12px;border-radius:999px;
+                                 font-size:0.8rem;font-weight:600;">NRI Advisory</span>
+                    <span style="background:#f1f5f9;color:#334155;padding:4px 12px;border-radius:999px;
+                                 font-size:0.8rem;font-weight:600;">HNI Portfolios</span>
+                    <span style="background:#f1f5f9;color:#334155;padding:4px 12px;border-radius:999px;
+                                 font-size:0.8rem;font-weight:600;">RERA Verified Data</span>
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        # Stats row
+        s1, s2, s3 = st.columns(3)
+        with s1:
+            st.metric("Live Listings", "13,958+")
+        with s2:
+            st.metric("Micro-Markets", "226+")
+        with s3:
+            st.metric("Cities Covered", "Gurugram")
+
+    # ── Contact Section ───────────────────────────────────────────────────────
+    with col_contact:
+        st.markdown("## Contact Us")
+
+        st.markdown(
+            """
+            <div style="background:#ffffff;border:1.5px solid #e2e8f0;border-radius:18px;
+                        padding:1.8rem;box-shadow:0 8px 24px rgba(15,23,42,0.06);margin-bottom:1.2rem;">
+
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+
+                    <div style="display:flex;align-items:center;gap:14px;padding:0.9rem;
+                                background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
+                        <div style="width:42px;height:42px;border-radius:12px;background:#dbeafe;
+                                    display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <span style="font-size:20px;">📧</span>
+                        </div>
+                        <div>
+                            <div style="font-size:0.75rem;color:#64748b;font-weight:600;
+                                        text-transform:uppercase;letter-spacing:0.04em;">Business Email</div>
+                            <div style="font-size:0.96rem;font-weight:700;color:#0f172a;">
+                                areintelligence@gmail.com
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;align-items:center;gap:14px;padding:0.9rem;
+                                background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
+                        <div style="width:42px;height:42px;border-radius:12px;background:#dcfce7;
+                                    display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <span style="font-size:20px;">📱</span>
+                        </div>
+                        <div>
+                            <div style="font-size:0.75rem;color:#64748b;font-weight:600;
+                                        text-transform:uppercase;letter-spacing:0.04em;">WhatsApp / Phone</div>
+                            <div style="font-size:0.96rem;font-weight:700;color:#0f172a;">
+                                +91 63875 94514
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;align-items:center;gap:14px;padding:0.9rem;
+                                background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
+                        <div style="width:42px;height:42px;border-radius:12px;background:#fce7f3;
+                                    display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <span style="font-size:20px;">📸</span>
+                        </div>
+                        <div>
+                            <div style="font-size:0.75rem;color:#64748b;font-weight:600;
+                                        text-transform:uppercase;letter-spacing:0.04em;">Instagram</div>
+                            <div style="font-size:0.96rem;font-weight:700;color:#0f172a;">
+                                @akhi_real_estate_intelligence
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;align-items:center;gap:14px;padding:0.9rem;
+                                background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;">
+                        <div style="width:42px;height:42px;border-radius:12px;background:#f0fdf4;
+                                    display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <span style="font-size:20px;">📍</span>
+                        </div>
+                        <div>
+                            <div style="font-size:0.75rem;color:#64748b;font-weight:600;
+                                        text-transform:uppercase;letter-spacing:0.04em;">Location</div>
+                            <div style="font-size:0.96rem;font-weight:700;color:#0f172a;">
+                                Gurugram, Haryana, India
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        # Quick action buttons
+        st.markdown("**Connect Instantly**")
+        b1, b2 = st.columns(2)
+        with b1:
+            st.link_button(
+                "WhatsApp Now",
+                url="https://wa.me/916387594514",
+                use_container_width=True,
+                type="primary",
+            )
+        with b2:
+            st.link_button(
+                "Email Us",
+                url="mailto:areintelligence@gmail.com",
+                use_container_width=True,
+            )
+
+        b3, b4 = st.columns(2)
+        with b3:
+            st.link_button(
+                "Instagram",
+                url="https://instagram.com/akhi_real_estate_intelligence",
+                use_container_width=True,
+            )
+        with b4:
+            if st.button("Book Advisory Call", use_container_width=True, type="primary"):
+                st.session_state.page = "inquiry"
+                st.rerun()
+
+    st.markdown("---")
+
+    # ── Quick Inquiry Form ────────────────────────────────────────────────────
+    st.markdown("### Send Us a Message")
+    with st.form("contact_form"):
+        c1, c2 = st.columns(2)
+        with c1:
+            contact_name = st.text_input("Your Name *", placeholder="Full name")
+            contact_phone = st.text_input("Phone Number *", placeholder="10-digit mobile")
+        with c2:
+            contact_email = st.text_input("Email", placeholder="your@email.com")
+            contact_subject = st.selectbox("Subject", [
+                "Property Buying Inquiry",
+                "Investment Advisory",
+                "Rental Income Planning",
+                "NRI Property Services",
+                "Enterprise / API Access",
+                "General Query",
+            ])
+        contact_message = st.text_area("Message", placeholder="Tell us how we can help you...", height=100)
+        send_btn = st.form_submit_button("Send Message", type="primary", use_container_width=True)
+
+    if send_btn:
+        phone_ok, clean_ph = validate_phone_number(contact_phone)
+        if not contact_name or not contact_phone:
+            st.error("Please enter your name and phone number.")
+        elif not phone_ok:
+            st.error(clean_ph)
+        else:
+            lead = {
+                "name": sanitize_text(contact_name, 100),
+                "phone": clean_ph,
+                "email": sanitize_text(contact_email, 100) if contact_email else "N/A",
+                "budget": 0,
+                "interest": contact_subject,
+                "message": sanitize_text(contact_message, 1000),
+                "property": "Contact Page Inquiry",
+                "service": contact_subject,
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S IST"),
+            }
+            save_lead(lead)
+            try:
+                send_new_lead_alert(lead)
+            except Exception:
+                pass
+            st.success("Message sent! We will contact you within 2-4 business hours.")
+            st.balloons()
 
 
 def show_back_next(current_page: str):
     """Renders clean, icon-backed Back / Next buttons at the bottom of every page."""
     PAGE_ORDER = [
         "home", "explore", "shortlist", "intelligence",
-        "analytics", "reports", "map", "ask_akhi", "pricing", "inquiry",
+        "analytics", "reports", "map", "ask_akhi", "pricing", "inquiry", "contact",
     ]
     if current_page not in PAGE_ORDER:
         return
@@ -4149,13 +4607,13 @@ def show_back_next(current_page: str):
     with left:
         if idx > 0:
             prev_page = PAGE_ORDER[idx - 1]
-            if st.button("Back", key=f"back_{current_page}", icon=":material/arrow_back:", width='stretch'):
+            if st.button("← Back", key=f"back_{current_page}", use_container_width=True):
                 st.session_state.page = prev_page
                 st.rerun()
     with right:
         if idx < len(PAGE_ORDER) - 1:
             next_page = PAGE_ORDER[idx + 1]
-            if st.button("Next", key=f"next_{current_page}", icon=":material/arrow_forward:", width='stretch', type="primary"):
+            if st.button("Next →", key=f"next_{current_page}", use_container_width=True, type="primary"):
                 st.session_state.page = next_page
                 st.rerun()
 
@@ -4209,9 +4667,12 @@ def main():
             show_admin_dashboard()
         else:
             st.error("Access Denied: Administrator credentials required.")
-            if st.button("Back to Home", icon=":material/home:"):
+            if st.button("Back to Home"):
                 st.session_state.page = "home"
                 st.rerun()
+    elif page == "contact":
+        show_contact_page()
+        show_back_next("contact")
 
 
 if __name__ == "__main__":
