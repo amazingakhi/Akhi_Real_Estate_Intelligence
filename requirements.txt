@@ -1,0 +1,38 @@
+# ── Core Data & ML ────────────────────────────────────────────────────────────
+pandas>=2.0.0,<3.0.0
+numpy>=1.24.0
+numpy-financial>=1.0.0
+scikit-learn>=1.3.0,<2.0.0
+joblib>=1.3.0
+
+# ── Streamlit App ─────────────────────────────────────────────────────────────
+streamlit>=1.32.0,<2.0.0
+
+# ── Visualisation (used in notebooks & optional charts) ───────────────────────
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# ── Configuration & Environment ───────────────────────────────────────────────
+python-dotenv>=1.0.0
+
+# ── Security ──────────────────────────────────────────────────────────────────
+PyJWT>=2.8.0          # JWT token management (optional; app works without it)
+cryptography>=41.0.0  # Fernet encryption (optional)
+passlib>=1.7.4        # Password hashing helpers (optional)
+bcrypt>=4.0.0         # bcrypt backend for passlib (optional)
+
+# ── HTTP & Async ──────────────────────────────────────────────────────────────
+requests>=2.31.0
+
+# ── Database ──────────────────────────────────────────────────────────────────
+# SQLite is stdlib — no extra package needed for the default setup.
+# Uncomment below if you upgrade to PostgreSQL:
+# SQLAlchemy>=2.0.0
+# psycopg2-binary>=2.9.0
+
+# ── Optional Enterprise / Infrastructure ─────────────────────────────────────
+# Uncomment when deploying with Redis for distributed rate-limiting / caching:
+# redis>=5.0.0
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest>=8.0.0

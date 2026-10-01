@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Local runtime data and secrets
+data/registered_users.json
+data/buyer_leads.json
+data/akhi_properties.db
+.streamlit/secrets.toml
+.env
+.env.local
+.env.production
+
+# Generated artifacts
+visualizations/*.png
+reports/summary_report.txt
+
+# Notebook noise
+.ipynb_checkpoints/
