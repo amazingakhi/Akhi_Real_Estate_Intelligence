@@ -123,8 +123,9 @@ except Exception:
     def _rzp_live(): return False
 
 st.set_page_config(
-    page_title="Akhi Real Estate Intelligence | AREI™",
-    page_layout="wide",
+    page_title="Akhi Real Estate Intelligence | AREI",
+    page_icon="🏛️",
+    layout="wide",
     initial_sidebar_state="collapsed",
 )
 
